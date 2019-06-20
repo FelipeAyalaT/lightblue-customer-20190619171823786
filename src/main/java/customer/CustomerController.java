@@ -57,7 +57,7 @@ public class CustomerController {
     		logger.info("Connecting to cloudant at: "+cldUrl);
     		final CloudantClient cloudantClient = ClientBuilder.url(new URL(cldUrl))
     											.username(cloudantProperties.getUsername())
-    											.password(cloudProperties.getPassword())
+    											.password(cloudantProperties.getPassword())
     											.build();
     		cloudant = cloudantClient.database(cloudantProperties.getDatabase(), true);
     	}
@@ -102,7 +102,7 @@ public class CustomerController {
         }catch(Excepcion e)
         {
         	logger.error(e.getMessage(),e);
-        	return ResposeEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        	return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 
@@ -120,7 +120,7 @@ public class CustomerController {
         catch(NoDocumentExcepcion e)
         {
         	logger.error(e.getMessage(),e);
-        	return ResposeEntity.status(HttpStatus.NOT_FOUND).body("Customer with ID "+id+" not found");
+        	return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Customer with ID "+id+" not found");
         }
     }
 
