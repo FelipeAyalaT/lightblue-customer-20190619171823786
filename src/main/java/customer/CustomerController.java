@@ -146,6 +146,9 @@ public class CustomerController {
         	{
         		final URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(resp.getId()).toUri();
         		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(resp.getError());
+        	}else
+        	{
+        		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(resp.getError());
         	}
         }
         catch(Exception ex)
