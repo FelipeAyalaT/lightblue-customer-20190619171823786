@@ -44,7 +44,7 @@ public class CustomerController {
     private Database cloudant;
     
     @Autowired
-    private CloudantPropertiesBean clouddantProperties;
+    private CloudantPropertiesBean cloudantProperties;
     
     @PostConstruct
     private void init() throws MalformedURLException
