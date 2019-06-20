@@ -15,12 +15,12 @@ public class CloudantPropertiesBean
 	private String port;
 	private String database;
 	
-	public String getUserName ()
+	public String getUsername ()
 	{
 		return username;
 	}
 	
-	public void setUserName(String value)
+	public void setUsername(String value)
 	{
 		this.username = value;
 	}
