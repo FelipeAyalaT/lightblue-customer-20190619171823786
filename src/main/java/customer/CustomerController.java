@@ -84,7 +84,7 @@ public class CustomerController {
         catch(Exception e)
         {
         	logger.error(e.getMessage(),e);
-        	ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        	return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
   }
 
