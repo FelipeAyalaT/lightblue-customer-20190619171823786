@@ -41,7 +41,7 @@ import com.cloudant.client.org.lightcouch.NoDocumentException;
 public class CustomerController {
     
     private static Logger logger =  LoggerFactory.getLogger(CustomerController.class);
-    private Dtabase cloudant;
+    private Database cloudant;
     
     @Autowired
     private CloudantPropertiesBean clouddantProperties;
@@ -78,7 +78,7 @@ public class CustomerController {
         	if (username == null){
         		return ResponseEntity.badRequest().body("Missing username");
         	}
-        	final List<Customer> customers = cloudant.findByIndex("{\"selector\":{\"username\":""+username+"\"}}", Customer.class);
+        	final List<Customer> customers = cloudant.findByIndex("{\"selector\":{\"username\":\""+username+"\"}}", Customer.class);
         	return ResponseEntity.ok(customers);
         }
         catch(Exception e)
