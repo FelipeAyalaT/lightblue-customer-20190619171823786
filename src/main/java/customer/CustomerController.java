@@ -99,7 +99,7 @@ public class CustomerController {
         {
         	List<Customer> allCusts = cloudant.getAllDocsRequestBuilder().includeDocs(true).build().getResponse().getDocsAs(Customer.class);
         	return ResponseEntity.ok(allCusts);
-        }catch(Excepcion e)
+        }catch(Exception e)
         {
         	logger.error(e.getMessage(),e);
         	return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
@@ -117,7 +117,7 @@ public class CustomerController {
         	final Customer cust = cloudant.find(Customer.class, id);
         	return ResponseEntity.ok(cust);
         }
-        catch(NoDocumentExcepcion e)
+        catch(NoDocumentException e)
         {
         	logger.error(e.getMessage(),e);
         	return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Customer with ID "+id+" not found");

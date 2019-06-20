@@ -31,12 +31,12 @@ public class Customer
 		this._rev = value;
 	}
 	
-	public String getUserName ()
+	public String getUsername ()
 	{
 		return username;
 	}
 	
-	public void setUserName(String value)
+	public void setUsername(String value)
 	{
 		this.username = value;
 	}
